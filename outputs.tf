@@ -26,6 +26,6 @@ output "instance_id" {
   value = module.ec2.instance_id
 }
 
-output "public_ip" {
-  value = module.ec2.public_ip
+output "eip_association" {
+  value = aws_eip_association.todo_ec2.public_ip
 }
