@@ -3,8 +3,7 @@
 yum update -y
 
 yum install -y git postgresql-server
-#amazon-linux-extras install -y nginx1 java-openjdk11 postgresql11
-amazon-linux-extras install -y nginx1 java-openjdk11
+amazon-linux-extras install -y nginx1 java-openjdk11 postgresql11
 
 /usr/bin/postgresql-setup --initdb
 

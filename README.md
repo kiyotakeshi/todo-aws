@@ -206,6 +206,8 @@ vi /var/lib/pgsql/data/pg_hba.conf
 < host    all             all             127.0.0.1/32            ident
 ---
 > host    all             all             127.0.0.1/32            md5
+
+systemctl restart postgresql && systemctl is-active $_
 ```
 
 - build spring app
@@ -228,7 +230,15 @@ vi src/main/java/com/kiyotakeshi/todo/controller/TodoApiController.java
 
 ```shell
 ./mvnw clean package
+```
 
+or build local environment and scp to EC2
+
+```shell
+scp -i todo_key ./todo*jar ec2-user@i-0abcdefg12345hijk:~/
+```
+
+```shell
 nohup java -jar target/todo-*.jar &
 
 # ps auxwww | grep java | grep -v grep
