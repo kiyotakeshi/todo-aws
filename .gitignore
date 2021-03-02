@@ -36,3 +36,6 @@ terraform.rc
 
 # custom
 .envrc
+*.pem
+*.idea**
+
